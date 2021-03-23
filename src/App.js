@@ -20,20 +20,47 @@ class App extends Component {
           title: 'O título 3',
           body: 'O corpo 3'
         }
-      ]
+      ],
+      counter: 0
     };
+
+    timeOutUpdate= null
+
+  handleTimeout = () => {
+    const {posts, counter} = this.state;
+    posts[0].title = 'O título mudou';
+    this.timeOutUpdate = setTimeout(() => {
+    // setTimeout(() => {
+      this.setState({ posts, counter: counter + 1})
+    }, 1000);
+  }
+
+  componentDidMount() {
+    // console.log('OI');
+    this.handleTimeout();
+  }
+
+  componentDidUpdate(){
+    this.handleTimeout();
+  }
+
+  componentWillUnmount(){
+    clearTimeout(this.timeOutUpdate);
+  }
 
   render() {
 
-      const { posts } = this.state;
+      const { posts, counter } = this.state;
 
       return (
       <div className="App">
+        <h1>{ counter }</h1>
+        {/* <h1>{ counter }</h1> */}
         {posts.map(post => (
           <div key={post.id}>
-            <h1> {post.title} </h1>
+            <h1> { post.title } </h1>
             <p>
-              {post.body}
+              { post.body }
             </p>
           </div>
       ))}
