@@ -1,0 +1,17 @@
+.post {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Efeito de sombreado*/
+    transition: transform 100ms ease-in-out; /* Animação - a transição*/
+  }
+  
+  .post:hover {
+    transform: scale(1.05); /* Animação - o Efeito */
+  }
+
+  .post img {
+    max-width: 100%;
+  }
+  
+  .post-content {
+    padding: 30px;
+  }

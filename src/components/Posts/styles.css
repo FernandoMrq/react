@@ -1,0 +1,5 @@
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* faz o design do grid */
+    gap: 30px /* espaçamento entre elementos */
+  }

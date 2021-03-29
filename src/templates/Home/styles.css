@@ -1,0 +1,13 @@
+.container {
+  min-height  : 100vh; /* Ocupa 100% da tela */
+  background  : #eee;
+  padding     : 30px; /* Laterais das imagens */
+  margin      : 0 auto;
+  max-width   : 1200px;
+}
+
+.button-container {
+  min-height    : 60px;
+  display       : flex;
+  align-items   : flex-end;
+}
